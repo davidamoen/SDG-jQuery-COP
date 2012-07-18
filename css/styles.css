@@ -1,0 +1,66 @@
+﻿
+
+#container 
+{
+    padding:50px !important;
+}
+#container .wrapper 
+{
+    height:200px;
+    width:200px;  
+}
+#container .item 
+{
+    height:180px;
+    width:180px;
+    border-radius:1em;   
+    opacity:0.8;
+    filter:alpha(opacity=80); /* For IE8 and earlier */
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    font-size:24px;
+    cursor:pointer;
+}
+#container .item:hover, #container .activeitem
+{
+    opacity:1;
+    filter:alpha(opacity=100); /* For IE8 and earlier */   
+    box-shadow: 10px 10px 5px #888; 
+}
+.searchform 
+{
+    background:#dedede;
+    width:400px;
+    height:300px;
+}
+
+.red 
+{
+    background:#FF542E;
+}
+
+.yellow 
+{
+    background:#F2BC00;
+}
+
+.gray 
+{
+    background:#C7BAA7;
+}
+
+.blue1 
+{
+    background:#CFD6DE;
+}
+
+.blue2
+{
+    background:#ADC1D6;
+}
+
+.blue3
+{
+    background:#7297BA;
+}
