@@ -28,11 +28,19 @@
     filter:alpha(opacity=100); /* For IE8 and earlier */   
     box-shadow: 10px 10px 5px #888; 
 }
-.searchform 
-{
-    background:#dedede;
-    width:400px;
-    height:300px;
+
+#pages .page {
+
+    position:absolute;
+    z-index: 10;
+    height: 575px;
+    width: 1250px;
+    background:#FDFCDC;
+    top:30px;
+    left:50px;
+    border-radius:1em;   
+    box-shadow: 10px 10px 5px #888; 
+    display: none;
 }
 
 .red 
