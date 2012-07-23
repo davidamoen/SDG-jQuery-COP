@@ -12,79 +12,86 @@
      <script src="js/jquery-ui.min.js"></script>
      <script src="js/jquery.isotope.min.js"></script>
      <script src="js/scripts.js"></script>
-
-
-
-
      <link rel="stylesheet" type="text/css" href="css/styles.css" />
      <link rel="stylesheet" type="text/css" href="css/isotope.css" />
-
-
-
-<script type = "text/x-jquery-tmpl" id = "personTemplate">
-    <h2>${pagetitle}</h2>
-
-</script>   
-
+     <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-    <div id="container">
-        <div class="wrapper">
-            <div class="item" id="introduction">Introduction</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="whatisjquery">What is jQuery?</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="whyuseit">What can you do with it?</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div1">Examples</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div2">What is jQuery?</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div3">Introduction</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div4">What is jQuery?</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div5">Why use it?</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div6">Introduction</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div7">What is jQuery?</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div8">Introduction</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div9">What is jQuery?</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div10">Why use it?</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div11">Introduction</div>
-        </div>
-        <div class="wrapper">
-            <div class="item" id="Div12">What is jQuery?</div>
+    <div id="slidewrapper">
+        <div id="container">
+            <div class="wrapper">
+                <div class="item" id="getstarted">Get started</div>
+            </div>
+            <div class="wrapper">
+                <div class="item" id="traversing">Traversing</div>
+            </div>
+            <div class="wrapper">
+                <div class="item" id="manipulation">DOM Manipulation</div>
+            </div>
+            <div class="wrapper">
+                <div class="item" id="effects">Effects</div>
+            </div>
+            <div class="wrapper">
+                <div class="item" id="events">Events</div>
+            </div>
+            <div class="wrapper">
+                <div class="item" id="ajax">AJAX</div>
+            </div>
+           <div class="wrapper">
+                <div class="item" id="plugins">Plugins</div>
+            </div>
         </div>
     </div>
 
-
-
     <div id="pages">
-        <div class="page" id="page_introduction">
+        <div class="page" id="pageDisplay">
+            <div id="pageCloser">Close</div>
+            <div class="pagecontent" id="page_getstarted">
+                <h3>Loading jQuery</h3>
+                <p>Either download the latest file from <a target="_blank" href="http://docs.jquery.com/Downloading_jQuery">here</a> and add this into a script tag</p>
+                <p>or</p>
+                <p>Just add this script tag: </p>
+                <pre>&lt;script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"&gt;&lt;/script&gt;</pre>
+                <p>Then start a custom.js file with this: </p>
+                <pre>$(document).ready(function () {
+    // jQuery code goes here
+});</pre>
 
+            </div>
 
+            <div class="pagecontent" id="page_traversing">
+                <h3>Traversing the DOM</h3>
+                <p>Get a collection of all input tags on a page and do something</p>
+<pre>
+    $(input).attr('disabled','disabled');
+    $(a).last().click();
+</pre>
+                <p>Use CSS IDs and classes to identify elements</p>
+<pre>
+    $('#myHelpText').show();
+    $('#myForm').submit();
+</pre>
+                <p>Use CSS classes to identify groups of elements</p>
+<pre>
+    $(a.active).attr('href','http://www.solutiondesign.com');
+    $('.inactive').css('color', 'gray');
+</pre>
+
+                <p>Be more specific</p>
+<pre>
+    $('.wrapper .right a).addClass('foo');
+</pre>
+                <p>Additional methods</p>
+<pre>
+    $('.content').children().show();
+    $('.active').prev().hide();
+</pre>
+
+            <a target="_blank" href="http://api.jquery.com/category/traversing/">Full documentation here</a>
+
+            </div>
         </div>
-
     </div>
 
 </body>

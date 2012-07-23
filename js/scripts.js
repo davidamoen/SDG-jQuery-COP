@@ -16,44 +16,51 @@ if (typeof console === "undefined" || typeof console.log === "undefined") {
 
 //////////////////////////////////////////////////////////////
 // script that run once the DOM is complete
-//////////////////////////////////////////////////////////////   
+//////////////////////////////////////////////////////////////
 $(document).ready(function () {
 
     colors = new Array('red', 'blue1', 'blue2', 'blue3', 'gray', 'yellow')
 
     //////////////////////////////////////////////////////////////
     // render the isotope plugin for the opening page, and assign a random color to the boxes
-	//////////////////////////////////////////////////////////////   
+    //////////////////////////////////////////////////////////////   
     $('#container').isotope({ filter: '.wrapper' }, function ($items) {
         $items.each(function () {
+
             var randomNum = Math.ceil(Math.random() * colors.length) - 1;
+
             $(this).find('.item').addClass(colors[randomNum]);
+
         });
     });
 
     //////////////////////////////////////////////////////////////
+    // hide all the examples in the presentation
+    //////////////////////////////////////////////////////////////   
+    $('.pagecontent').hide();
+
+    //////////////////////////////////////////////////////////////
     // have the appropriate page appear when clicking a box
-	//////////////////////////////////////////////////////////////    
-    $('#container .item').click(function() {
+    //////////////////////////////////////////////////////////////    
+    $('#container .item').click(function () {
 
-    	//construct the pageId
-    	var pageId = $(this).attr('id');
-    	var htmlID = 'page_'+$(this).attr('id');
-    	var jsonFile = pageId+'.json';
-    	console.log(jsonFile);
+        $('.pagecontent').hide();
 
-    	// make a json call and apply a jQuery template
-		$.ajax({
-		  url: jsonFile,
-		  context: document.body
-		}).done(function() { 
-		  console.log('done')
-		});    	
+        //construct the pageId
+        var htmlID = 'page_' + $(this).attr('id');
 
+        // show the appropriate content
+        $('#'+htmlID).show();
+        $('#pageDisplay').show('blind');
+    });
 
-    	// show the page using jQuery UI method show
-    	//$('#'+pageId).show('blind')
-    })
+    $('#pageCloser').click(function () {
+
+        $('.pagecontent').hide();
+
+        $('#pageDisplay').hide('blind');
+
+    });
 
 });
 
