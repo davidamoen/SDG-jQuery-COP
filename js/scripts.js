@@ -108,11 +108,11 @@ $(document).ready(function () {
     $('.animationSample1').click(function () {
         $('#logo').removeAttr('style');
         $('#logo').show();
-        $('#logo').animate({ left: '+=500' }, 500, function () {
+        $('#logo').animate({ left: '+=300' }, 500, function () {
             $('#logo').animate({ top: '-=200' }, 500, function () {
-                $('#logo').animate({ left: '+=520' }, 500, function () {
+                $('#logo').animate({ left: '+=320' }, 500, function () {
                     $('#logo').animate({ top: '-=225' }, 500, function () {
-                        console.log("animation complete");
+                        console.log("animation complete"); 
                     });
                 });
             });
@@ -125,11 +125,11 @@ $(document).ready(function () {
         $('#loader').show();
         $.ajax({
             type: 'POST',
-            url: "http://api.geonames.org/wikipediaSearchJSON?maxRows=10&username=davidamoen&q=" + $('#wikipediaSearchTextBox').val(),
+            url: "http://api.geonames.org/wikipediaSearchJSON?maxRows=20&username=davidamoen&q=" + $('#wikipediaSearchTextBox').val(),
             success: function (data) {
                 $('#loader').hide();
                 $.each(data.geonames, function (idx, elem) {
-                    html = '<div class="results"><div class="thumb"><img src="' + elem.thumbnailImg + '" /></div><div class="title">' + elem.title + '</div><a href="http://' + elem.wikipediaUrl + '" target="_blank">Go</a></div>';
+                    html = '<div class="results"><div class="thumb"><img src="' + elem.thumbnailImg + '" />&nbsp;</div><div class="title">' + elem.title + '</div><a href="http://' + elem.wikipediaUrl + '" target="_blank">Go</a></div>';
                     $('#searchResults').append(html);
                 });
             },

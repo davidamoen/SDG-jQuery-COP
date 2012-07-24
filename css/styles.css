@@ -43,8 +43,7 @@
 #pages 
 {
     position:relative;
-    margin:-500px auto;
-    width:80%;
+    margin:0 auto;
 }
 
 #pages .page {
@@ -122,7 +121,7 @@ pre
     font-family:Courier !important;
     background:#dedede;
     border:1px solid #ccc;
-    font-size:15px !important;
+    font-size:24px !important;
     margin:0;
     padding:0;
 }
@@ -148,6 +147,8 @@ pre
 {
     cursor:pointer;
     border:1px outset gray;    
+    margin:12px;
+    padding:5px;
 }
 
 .animationSample1 
@@ -155,6 +156,8 @@ pre
     cursor:pointer;
     border:1px outset gray;  
     width:150px;    
+    margin:12px;
+    padding:5px;    
 }
 
 #addShowHideSample1,#addShowHideSample2,#addShowHideSample3,#addShowHideSample4
@@ -165,6 +168,8 @@ pre
     clear:both;
     margin:5px;
     width:465px;
+    margin:12px;
+    padding:5px;    
 }
 
 #wolfpic 
@@ -182,8 +187,9 @@ pre
 
 #searchResults
 {
- height:385px;
- overflow:auto;   
+ height:365px;
+ overflow:auto;  
+ margin:20px 0; 
 }
 
 .thumb 
@@ -195,6 +201,9 @@ pre
 .results 
 {
     clear:both;
+    height:75px;
+    padding:12px 0;
+    border-bottom:1px solid #999999;
 }
 .results .title 
 {
@@ -208,4 +217,9 @@ pre
     display:none;   
     margin:150px 0 0;
     position:absolute;
+}
+
+#wikipediaSearchTextBox 
+{
+    font-size:18px;
 }
