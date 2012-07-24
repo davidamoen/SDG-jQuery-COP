@@ -1,4 +1,9 @@
 ﻿
+.clear 
+{
+    clear:both;
+}
+
 #slidewrapper 
 {
  margin:0px auto;
@@ -45,7 +50,7 @@
 #pages .page {
     position:absolute;
     z-index: 10;
-    height: 400px;
+    height: 500px;
     background:#ffffff;
     border-radius:1em;   
     box-shadow: 10px 10px 10px 10px #888; 
@@ -65,7 +70,7 @@
 .pagecontent 
 {
     overflow:auto;
-    height:425px;
+    height:500px;
 }
 
 #pageDisplay ul {
@@ -120,4 +125,87 @@ pre
     font-size:15px !important;
     margin:0;
     padding:0;
+}
+
+
+.addClassSample1 
+{
+    width: 200px;
+    height:50px;
+    border:1px solid gray;
+    padding:5px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.redbox 
+{
+    border-color:Red;
+    color:Red;
+}
+
+.addContentSample2,.ajaxSample1
+{
+    cursor:pointer;
+    border:1px outset gray;    
+}
+
+.animationSample1 
+{
+    cursor:pointer;
+    border:1px outset gray;  
+    width:150px;    
+}
+
+#addShowHideSample1,#addShowHideSample2,#addShowHideSample3,#addShowHideSample4
+{
+    cursor:pointer;
+    border:1px outset gray;    
+    float:left;
+    clear:both;
+    margin:5px;
+    width:465px;
+}
+
+#wolfpic 
+{
+    float:right;
+    margin:-175px 50px 0 0;
+    display:none;
+}
+
+#logo 
+{
+    position:absolute;
+    display:none;
+}
+
+#searchResults
+{
+ height:385px;
+ overflow:auto;   
+}
+
+.thumb 
+{
+    width:150px;
+    float:left;
+}
+
+.results 
+{
+    clear:both;
+}
+.results .title 
+{
+ width:350px;  
+ font-size:18px;
+ float:left; 
+}
+
+#loader 
+{
+    display:none;   
+    margin:150px 0 0;
+    position:absolute;
 }

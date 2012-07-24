@@ -50,7 +50,7 @@ $(document).ready(function () {
         var htmlID = 'page_' + $(this).attr('id');
 
         // show the appropriate content
-        $('#'+htmlID).show();
+        $('#' + htmlID).show();
         $('#pageDisplay').show('blind');
     });
 
@@ -59,6 +59,81 @@ $(document).ready(function () {
         $('.pagecontent').hide();
 
         $('#pageDisplay').hide('blind');
+
+    });
+
+
+    //////////////////////////////////////////////////////////////
+    // DOM Manipulation samples
+    //////////////////////////////////////////////////////////////   
+
+    // toggle CSS on and off
+    $('.addClassSample1').toggle(
+        function () {
+            $(this).addClass('redbox');
+        },
+        function () {
+            $(this).removeClass('redbox');
+        }
+    );
+
+
+    // Content insertion
+    $('.addContentSample2').click(function () {
+        $(this).after('<span>You typed: ' + $('#addContentTextBox1').val() + '</span>');
+    });
+
+    // show/hide methods
+    $('#addShowHideSample1').click(function () {
+        $('#wolfpic').fadeOut(500);
+        $('#wolfpic').show();
+    });
+
+    $('#addShowHideSample2').click(function () {
+        $('#wolfpic').fadeOut(500);
+        $('#wolfpic').show('bounce');
+    });
+
+    $('#addShowHideSample3').click(function () {
+        $('#wolfpic').fadeOut(500);
+        $('#wolfpic').fadeIn(2000);
+    });
+
+    $('#addShowHideSample4').click(function () {
+        $('#wolfpic').fadeOut(500);
+        $('#wolfpic').show('puff');
+    });
+
+    // sample animation
+    $('.animationSample1').click(function () {
+        $('#logo').removeAttr('style');
+        $('#logo').show();
+        $('#logo').animate({ left: '+=500' }, 500, function () {
+            $('#logo').animate({ top: '-=200' }, 500, function () {
+                $('#logo').animate({ left: '+=520' }, 500, function () {
+                    $('#logo').animate({ top: '-=225' }, 500, function () {
+                        console.log("animation complete");
+                    });
+                });
+            });
+        });
+    });
+
+    $('.ajaxSample1').click(function () {
+        $('#searchResults .results').detach();
+        $('#loader').show();
+        $.ajax({
+            type: 'POST',
+            url: "http://api.geonames.org/wikipediaSearchJSON?maxRows=10&username=davidamoen&q=" + $('#wikipediaSearchTextBox').val(),
+            success: function (data) {
+                $('#loader').hide();
+                $.each(data.geonames, function (idx, elem) {
+                    html = '<div class="results"><div class="thumb"><img src="' + elem.thumbnailImg + '" /></div><div class="title">' + elem.title + '</div><a href="http://' + elem.wikipediaUrl + '" target="_blank">Go</a></div>';
+                    $('#searchResults').append(html);
+                });
+            },
+            dataType: 'json'
+        });
 
     });
 

@@ -11,10 +11,17 @@
      <script src="js/jquery.min.js"></script>
      <script src="js/jquery-ui.min.js"></script>
      <script src="js/jquery.isotope.min.js"></script>
+     <script src="js/jquery.tmpl.min.js"></script>
      <script src="js/scripts.js"></script>
      <link rel="stylesheet" type="text/css" href="css/styles.css" />
      <link rel="stylesheet" type="text/css" href="css/isotope.css" />
      <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+
+        <script type = “text/x-jquery-tmpl” id = “searchResultsTemplate”>
+
+            <span class="thumb"><img src="${thumbnailImg}" /></span><span class="title">${title}<a href="${wikipediaUrl}" target="_blank">Go</a>
+
+        </script>
 
 </head>
 <body>
@@ -41,6 +48,9 @@
            <div class="wrapper">
                 <div class="item" id="plugins">Plugins</div>
             </div>
+           <div class="wrapper">
+                <div class="item" id="cool_plugins">Cool Plugins</div>
+            </div>
         </div>
     </div>
 
@@ -54,7 +64,7 @@
                 <p>Just add this script tag: </p>
                 <pre>&lt;script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"&gt;&lt;/script&gt;</pre>
                 <p>Then start a custom.js file with this: </p>
-                <pre>$(document).ready(function () {
+<pre>$(document).ready(function () {
     // jQuery code goes here
 });</pre>
 
@@ -91,8 +101,127 @@
             <a target="_blank" href="http://api.jquery.com/category/traversing/">Full documentation here</a>
 
             </div>
-        </div>
-    </div>
+
+            <div class="pagecontent" id="page_manipulation">
+                <h3>DOM Manipulation</h3>
+                <p>Add a class to an element</p>
+<pre>
+    $('.addClassSample1').toggle(
+        function () {
+            $(this).addClass('redbox');
+        },
+        function () {
+            $(this).removeClass('redbox');
+        }
+    );
+</pre>
+
+<div class="addClassSample1">Click here to change colors</div>
+<br />
+
+                <p>Insert content into the DOM</p>
+<pre>
+    $('.addContentSample2').click(function () {
+        $(this).after('<span>You typed: '+ $('#addContentTextBox1').val() + '</span>');
+    });
+</pre>
+                <input type = "text" id="addContentTextBox1" />
+                <span class="addContentSample2">Add text and click here.  </span>
+
+                <br /><br />
+                <a target="_blank" href=http://api.jquery.com/category/manipulation/">Full documentation here</a>
+            </div>
+
+            <div class="pagecontent" id="page_effects">
+                <h3>Effects</h3>
+                <p>Show/Hide</p>
+<pre>
+    $('#addShowHideSample1').click(function () {
+        $('#wolfpic').fadeOut(500);
+        $('#wolfpic').show();
+    });
+</pre>
+
+                <div id="addShowHideSample1">Click to see with jQuery "Show" </div><br />
+                <div id="addShowHideSample2">Click to see with jQuery UI "Bounce"</div><br />
+                <div id="addShowHideSample3">Click to see with jQuery FadeIn</div><br />
+                <div id="addShowHideSample4">Click to see with jQuery UI "Puff"</div>
+                <img src="wolf.jpg" id="wolfpic" />
+                <br /><br /><br />
+                <br class="clear" />
+
+                <p>Animation</p>
+
+<pre>
+        $('#logo').css('left', '0');
+        $('#logo').css('top', '0');
+        $('#logo').show();
+        $('#logo').animate({ left: '+=500' }, 500, function () {
+            $('#logo').animate({ top: '-=200' }, 500, function () {
+                $('#logo').animate({ left: '+=520' }, 500, function () {
+                    $('#logo').animate({ top: '-=225' }, 500, function () {
+                        console.log("animation complete");
+                    }); 
+                }); 
+            });            
+        });
+
+</pre>
+
+            <div class="animationSample1">Show animation</div>
+            <img src="SDG-Logo-Small.png" id="logo" />
+            <br />
+            <a target="_blank" href="http://api.jquery.com/category/effects/">Full documentation here</a>
+</div>
+
+            <div class="pagecontent" id="page_events">
+                <h3>Events</h3>
+                <p>.click()</p>
+                <p>.blur()</p>
+                <p>.change()</p>
+                <p>.live()</p>
+                <p>.die()</p>
+
+                <a target="_blank" href="http://api.jquery.com/category/events/">Full documentation here</a>
+            </div>
+
+            <div class="pagecontent" id="page_ajax">
+                <h3>JSON</h3>
+
+                <input type = "text" id="wikipediaSearchTextBox" />
+                <span class="ajaxSample1">Add text and click here.  </span>
+
+                <div id="searchResults">
+                    
+                    <center><img src="ajax-loader.gif" id="loader" /></center>
+                
+                </div>
+
+                <a target="_blank" href="http://api.jquery.com/category/ajax/">Full documentation here</a>
+            </div>
+
+            <div class="pagecontent" id="page_plugins">
+                <h3>Writing plugins</h3>
+                <p>More content coming.</p>
+
+                <a target="_blank" href="http://docs.jquery.com/Plugins/Authoring">Full documentation here</a>
+                <a target="_blank" href="http://www.queness.com/post/112/a-really-simple-jquery-plugin-tutorial">A nice tutorial</a>
+                
+            </div>
+           
+            <div class="pagecontent" id="page_cool_plugins">
+                <h3>Cool plugins</h3>
+
+                <ul>
+                    <li><a target="_blank" href="http://docs.jquery.com/Plugins/Validation" target="_blank">Validate</a></li>
+                    <li><a target="_blank" href="https://github.com/carhartl/jquery-cookie/" target="_blank">Cookie</a></li>
+                    <li><a target="_blank" href="http://isotope.metafizzy.co/" target="_blank">Isotope</a></li>
+                    <li><a target="_blank" href="http://fgnass.github.com/spin.js/" target="_blank">Spin</a></li>
+                    <li><a target="_blank" href="http://medleyweb.com/resources/tools/40-best-jquery-plugins-every-web-developer/" target="_blank">More jQuery links</a></li>
+                
+               
+                </ul>
+            </div>
 
 </body>
 </html>
