@@ -76,7 +76,7 @@ $(document).ready(function () {
             $(this).removeClass('redbox');
         }
     );
-
++
 
     // Content insertion
     $('.addContentSample2').click(function () {
@@ -112,7 +112,7 @@ $(document).ready(function () {
             $('#logo').animate({ top: '-=200' }, 500, function () {
                 $('#logo').animate({ left: '+=320' }, 500, function () {
                     $('#logo').animate({ top: '-=225' }, 500, function () {
-                        console.log("animation complete"); 
+                        console.log("animation complete");
                     });
                 });
             });
@@ -127,11 +127,15 @@ $(document).ready(function () {
             type: 'POST',
             url: "http://api.geonames.org/wikipediaSearchJSON?maxRows=20&username=davidamoen&q=" + $('#wikipediaSearchTextBox').val(),
             success: function (data) {
+                console.log(data);
                 $('#loader').hide();
                 $.each(data.geonames, function (idx, elem) {
                     html = '<div class="results"><div class="thumb"><img src="' + elem.thumbnailImg + '" />&nbsp;</div><div class="title">' + elem.title + '</div><a href="http://' + elem.wikipediaUrl + '" target="_blank">Go</a></div>';
                     $('#searchResults').append(html);
                 });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $('#loader').hide();
             },
             dataType: 'jsonp'
         });
