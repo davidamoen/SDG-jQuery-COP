@@ -50,7 +50,7 @@
 #pages .page {
     position:absolute;
     z-index: 10;
-    height: 500px;
+    height: 550px;
     background:#ffffff;
     border-radius:1em;   
     box-shadow: 10px 10px 10px 10px #888; 
@@ -70,7 +70,7 @@
 .pagecontent 
 {
     overflow:auto;
-    height:500px;
+    height:550px;
 }
 
 #pageDisplay ul {

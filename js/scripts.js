@@ -119,6 +119,7 @@ $(document).ready(function () {
         });
     });
 
+    // ajax example
     $('.ajaxSample1').click(function () {
         $('#searchResults .results').detach();
         $('#loader').show();
@@ -132,7 +133,7 @@ $(document).ready(function () {
                     $('#searchResults').append(html);
                 });
             },
-            dataType: 'json'
+            dataType: 'jsonp'
         });
 
     });
