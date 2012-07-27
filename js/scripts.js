@@ -77,13 +77,16 @@ $(document).ready(function () {
         }
     );
 +
-
+    //////////////////////////////////////////////////////////////   
     // Content insertion
+    //////////////////////////////////////////////////////////////   
     $('.addContentSample2').click(function () {
         $(this).after('<span>You typed: ' + $('#addContentTextBox1').val() + '</span>');
     });
 
+    //////////////////////////////////////////////////////////////   
     // show/hide methods
+    //////////////////////////////////////////////////////////////       
     $('#addShowHideSample1').click(function () {
         $('#wolfpic').fadeOut(500);
         $('#wolfpic').show();
@@ -104,7 +107,9 @@ $(document).ready(function () {
         $('#wolfpic').show('puff');
     });
 
+    //////////////////////////////////////////////////////////////   
     // sample animation
+    //////////////////////////////////////////////////////////////       
     $('.animationSample1').click(function () {
         $('#logo').removeAttr('style');
         $('#logo').show();
@@ -119,7 +124,9 @@ $(document).ready(function () {
         });
     });
 
+    //////////////////////////////////////////////////////////////   
     // ajax example
+    //////////////////////////////////////////////////////////////       
     $('.ajaxSample1').click(function () {
         $('#searchResults .results').detach();
         $('#loader').show();
